@@ -1,2 +1,2 @@
-# jack-rs.github.io
-Sơ yếu lý lịch
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
