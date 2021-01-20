@@ -50,8 +50,8 @@ const Main = styled.main`
   section {
     flex: 1;
   }
-  @media(max-width: 800px) {
-    flex-direction: column-reverse
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
   }
 `;
 
@@ -144,10 +144,15 @@ function App() {
             <h3 className="title">#Information</h3>
             <ul>
               <li>Date of birth : 01/02/1993</li>
-              <li>Address : Chung cư cienco4 - 61 Nguyễn Trường Tộ - Tp.Vinh</li>
+              <li>
+                Address : Chung cư cienco4 - 61 Nguyễn Trường Tộ - Tp.Vinh
+              </li>
               <li>Email : Master.zogiv@gmail.com</li>
               <li>Phone : 0942.389.597</li>
             </ul>
+            <small>
+              <i>Everything is simple when thinking is simple</i>
+            </small>
           </Box>
         </section>
       </Main>
