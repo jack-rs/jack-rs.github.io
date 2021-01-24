@@ -22,7 +22,7 @@ export const Header = styled.div`
 
 export const Main = styled.main`
   text-align: left;
-  padding: 0 20px;
+  padding: 50px 20px;
   font-size: 1.1rem;
   display: flex;
   column-gap: 20px;
@@ -192,10 +192,14 @@ export const SwLanguage = styled.div`
 
 // Header
 
-export const HeaderProfile = styled.header`
+export const HeaderProfile = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px;
+`;
+
+export const HeaderWrap = styled.header`
+    background-color: #0001;
 `;
 
 // export svg icon

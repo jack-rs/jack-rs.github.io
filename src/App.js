@@ -2,51 +2,64 @@ import avatar from "./avatar.jpg";
 
 import "./App.css";
 import "./styles/icon/css/all.min.css";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as JK from "./styles/style";
 
 function App() {
   const [brightness, setBrightness] = useState(true);
-  const [language, setLanguage] = useState("vi");
+
+  const { t, i18n } = useTranslation();
+
+  const [language, setLanguage] = useState("en");
+
+  // translate
+
+  const changeLang = (e) => {
+    let lang = e.target.value;
+    // set language
+    setLanguage(lang);
+    // change languae
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <div className={`App ${!brightness ? "high" : ""}`}>
-      <JK.HeaderProfile>
-        <JK.SwLight>
-          {brightness ? (
-            <li onClick={() => setBrightness(!brightness)}>
-              <JK.IconLight />
-              <span>Bật đèn</span>
-            </li>
-          ) : (
-            <li onClick={() => setBrightness(!brightness)}>
-              <JK.IconDark />
-              <span>Tắt đèn</span>
-            </li>
-          )}
-        </JK.SwLight>
+      <JK.HeaderWrap>
+        <JK.HeaderProfile>
+          <JK.SwLight>
+            {brightness ? (
+              <li onClick={() => setBrightness(!brightness)}>
+                <JK.IconLight />
+                <span>Bật đèn</span>
+              </li>
+            ) : (
+              <li onClick={() => setBrightness(!brightness)}>
+                <JK.IconDark />
+                <span>Tắt đèn</span>
+              </li>
+            )}
+          </JK.SwLight>
 
-        <JK.SwLanguage>
-          <i className="fas fa-language"></i>
-          <select
-            onChange={(e) => setLanguage(e.target.value)}
-            value={language}
-          >
-            <option value="vi">Tiếng Việt </option>
-            <option value="en">Tiếng Anh </option>
-          </select>
-        </JK.SwLanguage>
-      </JK.HeaderProfile>
+          <JK.SwLanguage>
+            <i className="fas fa-language"></i>
+            <select onChange={(e) => changeLang(e)} value={language}>
+              <option value="vi">Tiếng Việt </option>
+              <option value="en">Tiếng Anh </option>
+            </select>
+          </JK.SwLanguage>
+        </JK.HeaderProfile>
 
-      <JK.Header>
-        <JK.Avatar>
-          <img src={avatar} alt="Phan Trọng Đại" title="Phan Trọng Đại" />
-        </JK.Avatar>
-        <h1>PHAN TRỌNG ĐẠI</h1>
-        <small>Developer - Experience 4 years </small>
-        <i>Php - Javascript - Sql - NoSql</i>
-      </JK.Header>
+        <JK.Header>
+          <JK.Avatar>
+            <img src={avatar} alt="Phan Trọng Đại" title="Phan Trọng Đại" />
+          </JK.Avatar>
+          <h1>{t("name")}</h1>
+          <small>Developer - Experience 4 years </small>
+          <i>Php - Javascript - Sql - NoSql</i>
+        </JK.Header>
+      </JK.HeaderWrap>
+
       <JK.Main>
         <section>
           <JK.Box>
@@ -98,7 +111,7 @@ function App() {
         </section>
         <section>
           <JK.Box>
-            <h3 className="title">#Information</h3>
+            <h3 className="title">#{t("blockInfo")}</h3>
             <ul>
               <li>Date of birth : 01/02/1993</li>
               <li>
