@@ -11,10 +11,10 @@ select actions in update publish; do
         echo -n "Mô tả commit: "
         read desc
         git add .
-        git commit -m "$commit" -m "$desc || ''"
+        git commit -m "$commit" -m "$desc"
         # deploy with git
         # step 1
-        yarn deploy
+        yarn build
         # step 2
         git add .
         git commit -m "publish"
@@ -28,7 +28,7 @@ select actions in update publish; do
         echo -n "Mô tả commit: "
         read desc
         git add .
-        git commit -m "$commit" -m "$desc || ''"
+        git commit -m "$commit" -m "$desc"
         git push origin $branch
         #close
         echo "cap nhat"
