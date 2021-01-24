@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Make by JackRs
-BRANCH=master
+BRANCH="master"
 echo "Chọn thao tác commit:"
 # update : cap nhat gi
 select actions in update publish; do
