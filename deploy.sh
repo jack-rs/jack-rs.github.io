@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Make by JackRs
-BRANCH="master"
+branch="master"
 echo "Chọn thao tác commit:"
 # update : cap nhat gi
 select actions in update publish; do
@@ -18,7 +18,7 @@ select actions in update publish; do
         # step 2
         git add .
         git commit -m "publish"
-        git push origin $BRANCH
+        git push origin $branch
         #close
         echo "xuat ban"
         exit
@@ -29,7 +29,7 @@ select actions in update publish; do
         read desc
         git add .
         git commit -m "$commit" -m "$desc || ''"
-        git push origin BRANCH
+        git push origin $branch
         #close
         echo "cap nhat"
         exit
