@@ -24,19 +24,19 @@ function App() {
   };
 
   return (
-    <div className={`App ${!brightness ? "high" : ""}`}>
+    <JK.Wrapper className={`App ${!brightness ? "high" : ""}`}>
       <JK.HeaderWrap>
         <JK.HeaderProfile>
           <JK.SwLight>
             {brightness ? (
               <li onClick={() => setBrightness(!brightness)}>
                 <JK.IconLight />
-                <span>Bật đèn</span>
+                <span>Sáng</span>
               </li>
             ) : (
               <li onClick={() => setBrightness(!brightness)}>
                 <JK.IconDark />
-                <span>Tắt đèn</span>
+                <span>Tối</span>
               </li>
             )}
           </JK.SwLight>
@@ -106,6 +106,7 @@ function App() {
               <li>2016 - Freelancer Group </li>
               <li>2018 - Mid FGC Techlution</li>
               <li>2020 - Redsand</li>
+              <li>2021 - Redsand</li>
             </ul>
           </JK.Box>
         </section>
@@ -113,18 +114,23 @@ function App() {
           <JK.Box>
             <h3 className="title">#{t("blockInfo")}</h3>
             <ul>
-              <li>Date of birth : 01/02/1993</li>
+              <li>{t("date")} : 01/02/1993</li>
               <li>
-                Address : Chung cư cienco4 - 61 Nguyễn Trường Tộ - Tp.Vinh
+              {t("address")} : Chung cư cienco4 - 61 Nguyễn Trường Tộ - Tp.Vinh
               </li>
               <li>Email : Master.zogiv@gmail.com</li>
-              <li>Phone : 0942.389.597</li>
-              <li>Connect with me :</li>
+              <li>{t("phone")} : 0942.389.597</li>
+              <li>{t("contact")} :</li>
             </ul>
             <ul className="social">
               <li>
                 <a href="https://github.com/jack-rs" title="Github">
                   <JK.IconGithub />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/zg.zogiv" title="Facebook">
+                  <JK.IconFacebook />
                 </a>
               </li>
               <li>
@@ -142,7 +148,7 @@ function App() {
       <JK.Footer>
         <i>Make by PhanDai</i>
       </JK.Footer>
-    </div>
+    </JK.Wrapper>
   );
 }
 

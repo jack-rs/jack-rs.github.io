@@ -7,13 +7,21 @@ const resources = {
   vi: {
     translation: {
       "name": "PHAN TRỌNG ĐẠI",
-      "blockInfo" : "Thông tin"
+      "blockInfo" : "Thông tin",
+      "date" : "Ngày sinh",
+      "address" : "Địa chỉ",
+      "phone" : "Điện thoại",
+      "contact" : "Liên hệ với tôi",
     },
   },
   en: {
     translation: {
       "name": "PHAN TRONG DAI",
-      "blockInfo" : "Information"
+      "blockInfo" : "Information",
+      "date" : "Date of birth",
+      "address" : "Address",
+      "phone" : "Phone",
+      "contact" : "Connect with me",
     },
   },
 };

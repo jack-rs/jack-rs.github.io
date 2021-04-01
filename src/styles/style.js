@@ -202,6 +202,10 @@ export const HeaderWrap = styled.header`
     background-color: #0001;
 `;
 
+
+export const Wrapper = styled.div`
+  font-family: "ubuntu"
+`;
 // export svg icon
 export const IconLight = () => (
   <svg
